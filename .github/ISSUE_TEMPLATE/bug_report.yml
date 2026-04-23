@@ -1,0 +1,90 @@
+name: Bug Report
+description: Report a bug with VeloraVouchers
+title: "[Bug]: "
+labels: ["bug: unconfirmed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug.
+
+        Before submitting:
+        1. Make sure you are using the latest available version.
+        2. Make sure the issue has not already been reported.
+        3. Please report only one bug per issue.
+        4. Do not use temporary Discord media links.
+
+  - type: input
+    id: plugin_version
+    attributes:
+      label: Plugin version
+      placeholder: "e.g. 1.0.0-BETA"
+    validations:
+      required: true
+
+  - type: input
+    id: server_version
+    attributes:
+      label: Server version
+      placeholder: "e.g. Paper 1.21.1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: voucher_mode
+    attributes:
+      label: Voucher mode
+      options:
+        - Stackable
+        - Non-Stackable
+        - Unknown
+    validations:
+      required: false
+
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Describe the bug
+      description: Describe the issue in as much detail as possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction_steps
+    attributes:
+      label: How to reproduce
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: relevant_config
+    attributes:
+      label: Relevant config section
+      description: Paste the relevant part of your config if needed.
+      render: yml
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / errors
+      render: text
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I am using the latest available version
+          required: true
+        - label: I have checked that this issue has not already been reported
+          required: true
+        - label: I only included one bug in this report
+          required: true
